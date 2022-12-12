@@ -1,0 +1,42 @@
+.alert{
+    position: fixed;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    padding: 15px;
+    box-shadow: 2px 2px 5px lightgrey;
+    background: white;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    transition: .2s all;
+    z-index: 99;
+}
+
+.alert img{
+    width: 20px;
+    margin-right: 10px;
+}
+
+.alert-null{
+    display: none;
+}
+
+.alert-success{
+    border-left: 4px solid #32bea6;
+}
+
+.alert-danger{
+    border-left: 4px solid #de3030;
+}
+
+@keyframes border-bottom-animation {
+    from{
+        border-bottom-width: 100%;
+    }
+    to{
+        border-bottom-width: 0%;
+    }
+}

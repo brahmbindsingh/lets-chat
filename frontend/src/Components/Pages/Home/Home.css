@@ -1,0 +1,17 @@
+.home-background{
+    height: 100vh;
+    width: 100%;
+    background: #d8dbe4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-container{
+    background: #f6f7fb;
+    width: 90%;
+    height: 90vh;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+}

@@ -1,0 +1,87 @@
+.sidebar-container{
+    width: 25%;
+    margin-right: 15px;
+}
+
+.sidebar-container .profile-section{
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.sidebar-container .profile-section .left{
+    display: flex;
+}
+
+.sidebar-container .profile-section .left img{
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+}
+
+.sidebar-container .profile-section .left .user-info p{
+    color: #acb5b4;
+    font-size: 13px;
+}
+
+.sidebar-container .profile-section .right{
+    cursor: pointer;
+}
+
+.sidebar-container .room-buttons{
+    margin: 15px 15px 5px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.sidebar-container .room-buttons button{
+    border: none;
+    background: #abd9e6;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #274b55;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 0 5px 10px 0;
+}
+
+.sidebar-container .room-buttons button i{
+    font-size: 10px;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.sidebar-container .room-buttons button span{
+    letter-spacing: 1px;
+}
+
+.sidebar-container input{
+    padding: 10px 15px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    border: 1px solid lightgray;
+}
+
+.sidebar-container input:focus{
+    border-color: black;
+}
+
+.sidebar-container .rooms-list{
+    list-style: none;
+    margin-top: 15px;
+    overflow-y: scroll;
+    height: calc(90vh - 240px);
+}
+
+.sidebar-container .rooms-list li{
+    margin-bottom: 10px;
+}

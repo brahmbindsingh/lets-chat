@@ -1,0 +1,40 @@
+.chat-app_footer{
+    width: 100%;
+    background: white;
+    padding: 10px 15px;
+    border-top: 1px solid lightgray;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.chat-app_footer form{
+    width: 100%;
+    display: flex;
+}
+
+.chat-app_footer form input{
+    width: 100%;
+    background: #f6f7fb;
+    outline: none;
+    border: none;
+    margin-right: 10px;
+    border-radius: 8px;
+    padding: 10px 15px;
+}
+
+.chat-app_footer form button{
+    outline: none;
+    border: none;
+    background: #3ba48a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 35px;    
+    width: 35px;
+    border-radius: 50%;
+}
+
+.chat-app_footer form button i{
+    color: white;
+}

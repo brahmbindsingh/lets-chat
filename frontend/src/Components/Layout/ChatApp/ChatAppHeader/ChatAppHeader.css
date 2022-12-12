@@ -1,0 +1,23 @@
+.chat-app_header .room-info img{
+    width: 40px;
+}
+
+.chat-app_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 15px 25px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.chat-app_header .room-info{
+    display: flex;
+    align-items: center;
+}
+
+.chat-app_header .room-info img{
+    margin-right: 10px;
+}

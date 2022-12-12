@@ -1,0 +1,19 @@
+.sidebanner-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 70%;
+    background: white;
+}
+
+.sidebanner-container h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: #4475d9;
+    margin-bottom: 5rem;
+}
+.sidebanner-container img{
+    width: 80%;
+}

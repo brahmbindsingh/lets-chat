@@ -1,0 +1,19 @@
+.message-card{
+    width: fit-content;
+    display: flex;
+}
+
+.message-card .message-details{
+    padding: 10px;
+    background: #e2e4e9;
+    border-radius: 0 8px 8px;
+}
+
+.message-card .message-details p{
+    margin-top: 10px;
+}
+
+.message-card .user-info img{
+    width: 40px;
+    margin-right: 10px;
+}

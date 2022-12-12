@@ -1,0 +1,15 @@
+.messages-area{
+  position: relative;
+}
+
+.messages-area #messages{
+  background: white;
+  list-style: none;
+  padding: 10px 10px 0;
+  height: calc(90vh - 160px);
+  overflow-y: scroll;
+}
+
+.messages-area #messages li{
+  padding-bottom: 10px;
+}
