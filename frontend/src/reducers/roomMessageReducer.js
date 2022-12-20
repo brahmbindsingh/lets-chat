@@ -1,4 +1,4 @@
-import { CLEAR_ERRORS, NEW_MESSAGE_FAIL, NEW_MESSAGE_REQUEST, NEW_MESSAGE_SUCCESS, ROOM_MESSAGES_FAIL, ROOM_MESSAGES_REQUEST, ROOM_MESSAGES_SUCCESS } from '../constants/roomMessageConstants';
+import { CLEAR_ERRORS, NEW_MESSAGE_FAIL, NEW_MESSAGE_REQUEST, NEW_MESSAGE_SUCCESS, ROOM_MESSAGES_FAIL, ROOM_MESSAGES_REQUEST, ROOM_MESSAGES_SUCCESS, UPDATE_ROOM_MESSAGES_SUCCESS } from '../constants/roomMessageConstants';
 
 export const roomMessagesReducer = (state = {messages: []}, action) => {
     switch (action.type) {
@@ -10,6 +10,7 @@ export const roomMessagesReducer = (state = {messages: []}, action) => {
             
         case ROOM_MESSAGES_SUCCESS:
             return {
+                ...state,
                 loading: false,
                 messages: action.payload,
             };
@@ -20,28 +21,18 @@ export const roomMessagesReducer = (state = {messages: []}, action) => {
                 loading: false,
             };
 
-        case CLEAR_ERRORS:
-            return {
-                ...state,
-                error: null,
-            };
-        default:
-            return state;
-    }
-}
 
-export const newMessagesReducer = (state = {}, action) => {
-    switch (action.type) {
         case NEW_MESSAGE_REQUEST:
             return {
                 ...state,
                 loading: true,
             };
             
+        case UPDATE_ROOM_MESSAGES_SUCCESS:
         case NEW_MESSAGE_SUCCESS:
             return {
                 loading: false,
-                // messages: action.payload,
+                messages: [...state.messages, action.payload],
             };
 
         case NEW_MESSAGE_FAIL:
@@ -56,7 +47,6 @@ export const newMessagesReducer = (state = {}, action) => {
                 ...state,
                 error: null,
             };
-
         default:
             return state;
     }

@@ -1,11 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ChatAppFooter.css";
-import sendIcon from "./sendIcon.png";
-import io from "socket.io-client";
 import { useDispatch } from "react-redux";
 import { newMessage } from "../../../../actions/roomMessageAction";
-
-const Socket = io();
 
 const ChatAppFooter = (props) => {
 
@@ -17,14 +13,16 @@ const ChatAppFooter = (props) => {
     if(!message){
       return;
     }
-    dispatch(newMessage(props.roomId, message, Socket));
-    // Socket.emit("new-message", message);
+    dispatch(newMessage(props.roomId, message, props.Socket));
     setMessage('');
+    let allMessages = document.querySelectorAll("#messages li");
+    allMessages[allMessages.length-1].scrollIntoView({ behavior: "smooth" });
   }
 
   return (
     <div className="chat-app_footer">
-      <form action="">
+      {console.log(props.Socket)}
+      <form>
         <input
           type="text"
           placeholder="Type a message ..."

@@ -19,17 +19,12 @@ const ChatApp = (props) => {
     Socket.emit("setup", user._id);
     dispatch(getRoomInfo(props.activeRoomId, Socket));
   }, [props.activeRoomId])
-  useEffect(()=>{
-    socketConnected && Socket.on("get-message", ()=>{
-      dispatch(getRoomInfo("c5Xjr9", Socket));
-    })
-  }, [])
   return (
     <>
     {loading ? <Spinner /> :
       <div className='chat-app'>
           <ChatAppHeader room = {room} />
-          <Messaging roomId = {room._id} showAlert = {props.showAlert} />
+          <Messaging roomId = {room._id} showAlert = {props.showAlert} Socket = {Socket} />
       </div>
     }
     </>

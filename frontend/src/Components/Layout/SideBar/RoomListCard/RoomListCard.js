@@ -3,9 +3,11 @@ import './RoomListCard.css';
 import roomIcon from '../../../../assets/avatar/gamer.png';
 import { useDispatch } from 'react-redux';
 import { deleteRoom, exitRoom } from '../../../../actions/roomAction';
+import {useNavigate} from 'react-router-dom';
 
 const RoomListCard = (props) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   // useEffect(()=>{
 
   // }, [dispatch])
@@ -17,7 +19,7 @@ const RoomListCard = (props) => {
       </div>
       <div className="room-menus">
         { props.userId !== props.roomAdmin._id ? <p onClick={()=>dispatch(exitRoom(props.name, props.showAlert))}>Exit</p> :
-        <p onClick={()=>dispatch(deleteRoom(props.name, props.showAlert))}>Delete</p>}
+        <p onClick={()=>dispatch(deleteRoom(props.name, props.showAlert, navigate))}>Delete</p>}
       </div>
     </div>
   )

@@ -111,7 +111,7 @@ export const exitRoom = (roomId, showAlert) => async (dispatch) => {
     }
 }
 
-export const deleteRoom = (roomId, showAlert) => async (dispatch) => {
+export const deleteRoom = (roomId, showAlert, navigate) => async (dispatch) => {
     dispatch({ type: DELETE_ROOM_REQUEST });
     const response = await fetch('/api/room/'+roomId, {
         method: 'DELETE',
@@ -125,6 +125,10 @@ export const deleteRoom = (roomId, showAlert) => async (dispatch) => {
     const json = await response.json();
     if(json.success){
         dispatch({ type: DELETE_ROOM_SUCCESS });
+        if(sessionStorage.getItem('activeRoomId')===roomId){
+            sessionStorage.removeItem('activeRoomId');
+        }
+        navigate("/")
         showAlert("success", json.message)
     }
     else{

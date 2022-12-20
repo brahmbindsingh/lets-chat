@@ -4,7 +4,7 @@ const http = require('http');
 const Room = require('./models/Room');
 const server = http.createServer(app);
 const io = require('socket.io')(server, {
-    pingTimeout: 60000,
+    pingTimeout: 600000,
     cors: {
         origin: 'http://localhost:3000',
         credentials: true 
@@ -25,9 +25,9 @@ io.on('connection', async (socket) => {
         console.log("User Joined Room: " + room);
     });
 
-    socket.on("new-message", (newMessage) => {
-        let chat = newMessage;
-        socket.emit("get-message", chat);
+    socket.on("new-message", (room, newMessage) => {
+        console.log("naya message aaya room " + room);
+        io.emit("get-message", newMessage);
     })
 
     socket.off("setup", (userId) => {

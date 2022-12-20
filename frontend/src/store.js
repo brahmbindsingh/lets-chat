@@ -1,7 +1,7 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit';
 import { userReducer } from './reducers/userReducer';
 import { deleteRoomReducer, exitRoomReducer, joinRoomReducer, newRoomReducer, roomInfoReducer, roomsReducer } from './reducers/roomReducer';
-import { roomMessagesReducer } from './reducers/roomMessageReducer';
+import { newMessagesReducer, roomMessagesReducer } from './reducers/roomMessageReducer';
 
 const store = configureStore({
   reducer: combineReducers({
